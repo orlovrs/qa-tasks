@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import ui.extension.Driver;
 
 public class HomePage extends BasePage {
 
@@ -11,20 +12,20 @@ public class HomePage extends BasePage {
     By marketDataItem = By.xpath(".//a[contains(text(), 'Market Data')]/ancestor::li");
     By preOpenMarketLink = By.xpath(".//a[contains(text(), 'Pre-Open Market')]");
 
-    public HomePage(WebDriver driver) {
-        super(driver);
+    public HomePage() {
+        super();
         this.url = "/";
     }
 
     public void clickPreOpenMarketVanBarLink() {
-        Actions action = new Actions(this.driver);
-        WebElement element = this.driver.findElement(navigationBar)
+        Actions action = new Actions(Driver.get());
+        WebElement element = Driver.get().findElement(navigationBar)
                 .findElement(marketDataItem);
         action.moveToElement(element)
                 .build()
                 .perform();
 
-        this.driver.findElement(navigationBar)
+        Driver.get().findElement(navigationBar)
                 .findElement(marketDataItem)
                 .findElement(preOpenMarketLink)
                 .click();

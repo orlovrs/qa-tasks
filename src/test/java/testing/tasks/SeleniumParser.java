@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
+import ui.extension.Driver;
 import ui.pages.HomePage;
 import ui.pages.PreOpenMarketPage;
 
@@ -34,29 +35,17 @@ import java.util.Map;
 6.	Пролистать таблицу до конца
  */
 public class SeleniumParser {
-    private ChromeDriver driver;
-
-    private HomePage home;
-    private PreOpenMarketPage preOpenMarket;
-
-    @BeforeAll
-    public static void globalSetup() {
-        WebDriverManager.chromedriver().setup();
-    }
+    private final HomePage home = new HomePage();
+    private final PreOpenMarketPage preOpenMarket = new PreOpenMarketPage();
 
     @BeforeEach
     public void setup() {
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        home = new HomePage(driver);
-        preOpenMarket = new PreOpenMarketPage(driver);
         home.open();
     }
 
     @AfterEach
     public void teardown() {
-        driver.quit();
+        Driver.quit();
     }
 
     @Test

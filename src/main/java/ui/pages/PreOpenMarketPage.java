@@ -1,24 +1,20 @@
 package ui.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import ui.components.shared.InteractiveTable;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.IntStream;
 
 public class PreOpenMarketPage extends BasePage {
     By table = By.id("livePreTable");
 
     InteractiveTable stocksTable;
 
-    public PreOpenMarketPage(WebDriver driver) {
-        super(driver);
+    public PreOpenMarketPage() {
+        super();
         this.url = "/market-data/pre-open-market-cm-and-emerge-market";
-        this.stocksTable = new InteractiveTable(driver, table);
+        this.stocksTable = new InteractiveTable(table);
     }
 
     public Map<String, Double> getPrices() {
