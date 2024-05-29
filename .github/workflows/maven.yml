@@ -17,7 +17,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     container:
-      image: openjdk:17-oracle
+      image: maven:3.8.3-openjdk-17
     services:
       selenium:
         image: selenium/standalone-${{ github.event.inputs.browser }}
