@@ -33,7 +33,6 @@ jobs:
           cache: maven
       - name: Install Google Chrome
         uses: browser-actions/setup-chrome@latest
-        run: chrome --version
       - name: Test with Maven
         run: mvn clean test --file pom.xml
         env:
