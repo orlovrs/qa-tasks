@@ -1,12 +1,9 @@
 package testing.tasks;
 
 import com.opencsv.CSVWriter;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
 import ui.extension.Driver;
 import ui.pages.HomePage;
 import ui.pages.PreOpenMarketPage;
@@ -14,7 +11,6 @@ import ui.pages.PreOpenMarketPage;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.Map;
 
 /*
@@ -34,7 +30,7 @@ import java.util.Map;
 5.	Выбрать в селекторе “NIFTY ALPHA 50”
 6.	Пролистать таблицу до конца
  */
-public class SeleniumParser {
+public class SeleniumParserTest {
     private final HomePage home = new HomePage();
     private final PreOpenMarketPage preOpenMarket = new PreOpenMarketPage();
 

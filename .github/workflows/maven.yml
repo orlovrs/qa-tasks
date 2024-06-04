@@ -39,5 +39,5 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: screenshots
-          path: screenshots/
+          name: csv
+          path: test.csv
