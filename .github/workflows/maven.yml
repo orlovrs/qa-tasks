@@ -32,9 +32,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Install Google Chrome
-        run: |
-          chmod +x ./scripts/InstallChrome.sh
-          ./scripts/InstallChrome.sh
+        run: sudo apt install -y chromium-browser
       - name: Test with Maven
         run: mvn clean test --file pom.xml
         env:
