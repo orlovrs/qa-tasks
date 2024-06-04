@@ -1,12 +1,18 @@
 package ui.extension;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import ui.config.Environment;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class DriverFactory {
     static WebDriver get() {
@@ -27,12 +33,12 @@ public class DriverFactory {
         return new FirefoxDriver();
     }
 
-    static WebDriver getChrome() {
+    static WebDriver getChrome() throws MalformedURLException {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
-        return new ChromeDriver(options);
+        return new RemoteWebDriver(new URL("http://selenium:4444/wd/hub"), options);
     }
 }
