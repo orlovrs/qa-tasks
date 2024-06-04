@@ -35,7 +35,6 @@ jobs:
         uses: browser-actions/setup-chrome@v1
         with:
           install-chromedriver: true
-          install-dependencies: true
       - name: Test with Maven
         run: mvn clean test --file pom.xml
         env:
