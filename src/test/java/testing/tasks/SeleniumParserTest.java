@@ -30,7 +30,7 @@ import java.util.Map;
 5.	Выбрать в селекторе “NIFTY ALPHA 50”
 6.	Пролистать таблицу до конца
  */
-public class SeleniumParser {
+public class SeleniumParserTest {
     private final HomePage home = new HomePage();
     private final PreOpenMarketPage preOpenMarket = new PreOpenMarketPage();
 
