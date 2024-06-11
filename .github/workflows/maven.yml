@@ -35,7 +35,7 @@ jobs:
         run: mvn clean test
         env:
           BROWSER: ${{ github.event.inputs.browser }}
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: csv
