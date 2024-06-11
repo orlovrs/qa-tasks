@@ -39,4 +39,4 @@ jobs:
         if: always()
         with:
           name: csv
-          path: ./screenshots
+          path: test.csv
