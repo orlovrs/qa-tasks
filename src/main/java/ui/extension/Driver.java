@@ -16,7 +16,6 @@ public class Driver {
             driver.set(DriverFactory.get());
             wait.set(new WebDriverWait(driver.get(), Duration.ofSeconds(10)));
             driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-            driver.get().manage().window().setSize(new Dimension(1920, 1080));
         }
         return driver.get();
     }

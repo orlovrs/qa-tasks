@@ -35,7 +35,7 @@ public class DriverFactory {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
-//            options.addArguments("--headless");
+            options.addArguments("--headless=new");
             return new RemoteWebDriver(new URL("http://selenium:4444/wd/hub"), options);
         } catch (Exception ignored) { }
         return null;
